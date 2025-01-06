@@ -10,4 +10,5 @@ Execute this script by running the following command on your system:
 wget -O ~/debian12-install-proaudio.sh https://raw.githubusercontent.com/rolodoom/linux-audio-setup-scripts/main/debian/12/install-proaudio.sh
 chmod +x ~/debian12-install-proaudio.sh
 ~/debian12-install-proaudio.sh
+rm ~/debian12-install-proaudio.sh
 ```
