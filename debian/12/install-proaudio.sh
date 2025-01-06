@@ -44,12 +44,14 @@ add_path_alias() {
     fi
 }
 
+
 # ---------------------------
 # Enable contrib non-free
 # ---------------------------
 notify "Enable contrib non-free"
 sudo sed -i '/^deb /s/$/ contrib non-free/' /etc/apt/sources.list
 # NOTE: to undo use this: sudo sed -i '/^deb /s/ contrib non-free//g' /etc/apt/sources.list
+
 
 # ---------------------------
 # Update system
@@ -111,7 +113,6 @@ fs.inotify.max_user_watches=600000' | sudo tee /etc/sysctl.d/99-custom.conf
 sudo sysctl --system
 
 
-
 # ---------------------------
 # Add the user to the audio group
 # ---------------------------
@@ -131,12 +132,14 @@ sudo dpkg -i kxstudio-repos_11.1.0_all.deb
 sudo apt update && sudo apt upgrade -y
 rm -rf kxstudio-repos_*.deb
 
+
 # ---------------------------
 # Install audio software
 # ---------------------------
 notify "Install audio software"
 # Install the basic software
 sudo apt install kxstudio-meta-audio-plugins-vst carla ardour audacity soundconverter dragonfly-reverb lsp-plugins calf-plugins caps dpf-plugins tap-plugins zam-plugins eq10q ebumeter x42-plugins
+
 
 # ---------------------------
 # REAPER
@@ -197,6 +200,7 @@ winetricks corefonts
 # Make a copy of .wine, as we will use this in the future as the base of
 # new wine prefixes (when installing plugins)
 cp -r ~/.wine ~/.wine-base
+
 
 # ---------------------------
 # Yabridge
