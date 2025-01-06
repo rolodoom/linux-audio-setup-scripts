@@ -215,7 +215,7 @@ mkdir -p ~/.local/share
 tar -C ~/.local/share -xavf yabridge.tar.gz
 rm yabridge.tar.gz
 add_path_alias "$HOME/.local/share/yabridge"
-. ~/.bash_aliases
+source ~/.bash_aliases
 # Create common VST paths
 mkdir -p "$HOME/.wine/drive_c/Program Files/Steinberg/VstPlugins"
 mkdir -p "$HOME/.wine/drive_c/Program Files/Common Files/VST2"
