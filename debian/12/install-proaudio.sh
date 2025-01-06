@@ -162,6 +162,22 @@ sudo ./reaper/reaper_linux_x86_64/install-reaper.sh --install /opt --integrate-d
 rm -rf ./reaper
 rm reaper.tar.xz
 
+
+# ---------------------------
+# MuseScore Studio 4 && Muse Sounds Manager
+# Note: The instructions below will install latest MuseScore
+# and Muse Sounds Manager Offiicla versions
+# ---------------------------
+notify "Install MuseScore Studio 4 && Muse Sounds Manager"
+wget https://cdn.jsdelivr.net/musescore/v4.4.4/MuseScore-Studio-4.4.4.243461245-x86_64.AppImage
+chmod +x MuseScore-Studio*.AppImage
+./MuseScore-Studio-*.AppImage install
+
+wget -O Muse_Sounds_Manager_x64.deb https://muse-cdn.com/Muse_Sounds_Manager_x64.deb
+sudo apt install ./Muse_Sounds_Manager_x64.deb
+rm Muse_Sounds_Manager_x64.deb
+
+
 # ---------------------------
 # Wine (stable)
 # This is required for yabridge.
