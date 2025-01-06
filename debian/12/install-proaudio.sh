@@ -59,7 +59,7 @@ sudo sed -i '/^deb /s/$/ contrib non-free/' /etc/apt/sources.list
 notify "Update the system"
 sudo apt update && sudo apt upgrade -y
 # Install core dependencies
-sudo apt wget curl -y
+sudo apt install wget curl -y
 
 
 # ---------------------------
