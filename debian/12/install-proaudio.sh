@@ -138,7 +138,7 @@ rm -rf kxstudio-repos_*.deb
 # ---------------------------
 notify "Install audio software"
 # Install the basic software
-sudo apt install kxstudio-meta-audio-plugins-vst carla ardour audacity soundconverter dragonfly-reverb lsp-plugins calf-plugins caps dpf-plugins tap-plugins zam-plugins eq10q ebumeter x42-plugins
+sudo apt install -y kxstudio-meta-audio-plugins-vst carla ardour audacity soundconverter dragonfly-reverb lsp-plugins calf-plugins caps dpf-plugins tap-plugins zam-plugins eq10q ebumeter x42-plugins
 
 
 # ---------------------------
