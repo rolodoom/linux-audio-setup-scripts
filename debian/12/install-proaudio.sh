@@ -146,13 +146,21 @@ sudo apt install kxstudio-meta-audio-plugins-vst carla ardour audacity soundconv
 # NOTE: When you run this script, there may be a newer version of REAPER available.
 # Check https://www.reaper.fm/download.php and update the version numbers below if necessary
 notify "Install REAPER"
-reaper_version="719" && wget -O reaper.tar.xz https://www.reaper.fm/files/7.x/reaper${reaper_version}_linux_x86_64.tar.xz
+REAPER_VERSION="729"
+# Check the number of digits and extract the correct major version
+if [ ${#REAPER_VERSION} -gt 3 ]; then
+  REAPER_MAJOR_VERSION="${REAPER_VERSION:0:2}"
+else
+  REAPER_MAJOR_VERSION="${REAPER_VERSION:0:1}"
+fi
+# Generate the REAPER_BRANCH based on the major version
+REAPER_BRANCH="${REAPER_MAJOR_VERSION}.x"
+wget -O reaper.tar.xz "https://www.reaper.fm/files/${REAPER_BRANCH}/reaper${REAPER_VERSION}_linux_x86_64.tar.xz"
 mkdir ./reaper
 tar -C ./reaper -xf reaper.tar.xz
 sudo ./reaper/reaper_linux_x86_64/install-reaper.sh --install /opt --integrate-desktop --usr-local-bin-symlink --quiet
 rm -rf ./reaper
 rm reaper.tar.xz
-
 
 # ---------------------------
 # Wine (stable)
