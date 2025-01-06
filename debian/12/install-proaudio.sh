@@ -183,14 +183,13 @@ rm Muse_Sounds_Manager_x64.deb
 # This is required for yabridge.
 # See https://wiki.winehq.org/Debian for additional information.
 # ---------------------------
-notify "Install Wine (stable)"
+notify "Install WineHQ (stable)"
 sudo dpkg --add-architecture i386
 sudo mkdir -pm755 /etc/apt/keyrings
 sudo wget -O /etc/apt/keyrings/winehq-archive.key https://dl.winehq.org/wine-builds/winehq.key
 sudo wget -NP /etc/apt/sources.list.d/ https://dl.winehq.org/wine-builds/debian/dists/bookworm/winehq-bookworm.sources
 sudo apt update
 sudo apt install --install-recommends winehq-stable -y
-
 # Winetricks
 sudo apt install cabextract winetricks -y
 # Base wine packages required for proper plugin functionality
